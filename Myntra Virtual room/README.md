@@ -7,14 +7,18 @@ Virtual Dressing Room is an augmented reality dressing room where the image of t
 
 <h3>Step 1:</h3> 
 Please install any Python Environment or IDE such as Anaconda...<br>
-Search <b>main.py</b> python file located in <b>Project-->main.py</b> directory...<br>
+To run projects Myntra Virtual room\Myntra Virtual room\Project>python main.py  ('.' Run this command if you've already installed all the packages, otherwise follow from Step 2)
 
-<h3>Step 2:</h3> 
+ 
+<h3>Step 2: Packages to install :</h3> 
 Now open Anaconda command prompt and move to specific location that contain <b>main.py</b> file...<br>
 
 <h3>Step 3:</h3> 
 Now type following command to run project...<br>
-<b>python main.py</b><br>
+```
+pip install cmake
+```
+(to be installed before installing dlib)
 
 <h3>Step 4:</h3> 
 After successfully completing run process you will get one <b>URL(local host url)</b>...<br>
