@@ -7,24 +7,68 @@ Virtual Dressing Room is an augmented reality dressing room where the image of t
 
 <h3>Step 1:</h3> 
 Please install any Python Environment or IDE such as Anaconda...<br>
-To run projects Myntra Virtual room\Myntra Virtual room\Project>python main.py  ('.' Run this command if you've already installed all the packages, otherwise follow from Step 2)
+To run projects Myntra Virtual room
+
+```
+\Myntra Virtual room\Project>python main.py
+```  
+
+('.' Run this command if you've already installed all the packages, otherwise follow from Step 2)
 
  
 <h3>Step 2: Packages to install :</h3> 
-Now open Anaconda command prompt and move to specific location that contain <b>main.py</b> file...<br>
 
-<h3>Step 3:</h3> 
-Now type following command to run project...<br>
 ```
 pip install cmake
 ```
-(to be installed before installing dlib)
+
+<h3>Step 3:</h3> 
+
+```
+pip install dlib
+```
+If it doesn't work then, visit this Github repository and download.
+```
+https://github.com/datamagic2020/Install-dlib
+```
+
+then go to the downloads and copy the path where github repository is downloaded, and also copy the file name.
+```
+pip install "github repository path\filename"
+```
+Still not able to follow? Watch this to install dlib - ` https://www.youtube.com/watch?v=AUJKdehF2ZA `
+
 
 <h3>Step 4:</h3> 
-After successfully completing run process you will get one <b>URL(local host url)</b>...<br>
-Click on that URL and you will redirect to Default Browser on your system...<br>
+
+```
+pip install flask
+```
 
 <h3>Step 5:</h3> 
-Now from our designed E-Commerce website you can select any product and after clicking <b>TRY NOW</b> button you will able to try that apparel virtually on your own body...<br>
 
-<h4>That's it... Thank You for your support... Cheers :)</h4>
+```
+pip install imutils
+```
+
+<h3>Step 6:</h3> 
+
+```
+pip install opencv-python
+```
+
+<h3>Step 7:</h3> 
+
+```
+pip install tk
+```
+
+<h3>Step 8:</h3> 
+
+```
+pip install pillow
+```
+
+<h4>Now RUN `python main.py` </h4>
+After successfully completing run process you will get one URL(local host url)...
+Click on that URL and you will redirect to Default Browser on your system...
