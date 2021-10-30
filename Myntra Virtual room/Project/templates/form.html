@@ -16,29 +16,24 @@
         <div class="image"></div>
         <div class="frm">
             <h3>Products</h3>
-            <form>
+            <form action="{{ url_for("formData")}}" method="post">
                 <div class="form-group">
-                    <label for="username">Label</label>
+                    <label for="Label">Label</label>
                     <!-- <input type="dropdown" class="form-control" id="username" placeholder=""> -->
-                    <select name="Label" id="cars">
-                        <option value="volvo" >Select the facial Product</option>
-                        <option value="volvo">Lotion</option>
-                        <option value="saab">Lotion</option>
-                        <option value="opel">Lotion</option>
-                        <option value="audi">Lotion</option>
+                    <select name="label" id="products">
+                        <option value="-" >Select the facial Product</option>
+                        <option value="Lotion">Lotion</option>
+                        <option value="Suns Cream">Suns Cream</option>
                       </select>
                 </div>
                 <div class="form-group">
-                    <label for="email">Skin</label>
-                    
+                    <label for="skin">Skin</label>
                     <!-- <input type="radio" class="form-control" id="html" placeholder="Skin Allergy">
                     <label for="html">Skin Allergy</label> -->
-                    <input type="radio" id="html" name="fav_language" value="HTML">
-                    <label for="html">HTML</label><br>
-                    <input type="radio" id="css" name="fav_language" value="CSS">
-                    <label for="css">CSS</label><br>
-                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-                    <label for="javascript">JavaScript</label>
+                    <input type="radio" id="Oily" name="skin" value="Oily">
+                    <label for="Oily">Oily</label><br>
+                    <input type="radio" id="Dry" name="skin" value="Dry">
+                    <label for="Dry">Dry</label><br>
                 </div>
                 <div class="form-group">
                     <!-- <label for="pwd">Price</label> -->

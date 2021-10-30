@@ -28,8 +28,14 @@ def tryall():
 def indexx():
     return render_template('home.html')
 
-@app.route('/form')
-def form():
+@app.route('/form', methods =["GET", "POST"])
+def formData():
+    if request.method == "POST":
+        label = request.form.get("label")
+        skin = request.form.get("skin") 
+        price_min = request.form.get("price-min") 
+        price_max = request.form.get("price-max") 
+        print("Your choice is "+label +" and "+ skin + "and your range is "+price_min +" to " + price_max)
     return render_template('form.html')
 
 @app.route('/index')
