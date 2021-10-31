@@ -1,11 +1,17 @@
 
-
-from flask import Flask, render_template, Response,redirect,request
+import flask
+from flask import Flask, render_template, Response,redirect,request, jsonify
+from numpy import dtype
 from camera import VideoCamera
+from flask_pymongo import PyMongo
 import os
 app = Flask(__name__)
 
 CART=[]
+# 
+app.config["MONGO_URI"] = "mongodb+srv://admindb:admindatabase@cluster0-vlwic.mongodb.net/myntra"
+mongo = PyMongo(app)
+db_operations = mongo.db.products
 
 @app.route('/checkOut')
 def checkOut():
@@ -28,14 +34,49 @@ def tryall():
 def indexx():
     return render_template('home.html')
 
+#         print("Your choice is "+label +" and "+ skin + "and your range is "+price_min +" to " + price_max)
+@app.route('/read')
+def read():
+    users = db_operations.find()
+    output = [{'Label' : user['Label'] } for user in users]
+    return jsonify(output)
+
 @app.route('/form', methods =["GET", "POST"])
 def formData():
     if request.method == "POST":
-        label = request.form.get("label")
-        skin = request.form.get("skin") 
-        price_min = request.form.get("price-min") 
-        price_max = request.form.get("price-max") 
-        print("Your choice is "+label +" and "+ skin + "and your range is "+price_min +" to " + price_max)
+        filter = {}
+        filter['Label'] = request.form.get("label")
+        skin = request.form.getlist("skin")
+        for x in skin:
+            if x == "Combination":
+                filter['Combination'] = 1
+            if x == "Dry":
+                filter['Dry'] = 1
+            if x == "Normal":
+                filter['Normal'] = 1
+            if x == "Oily":
+                filter['Oily'] = 1
+            if x == "Sensitive":
+                filter['Sensitive'] = 1
+        price_min = int(request.form['price-min'])
+        price_max = int(request.form['price-max'])
+        filter['price'] = { "$lte" : price_max, "$gte" : price_min}
+        products = db_operations.find(filter)
+        output = [
+            {'Label' : product['Label'] ,
+            'Brand' : product['brand'] ,
+            'Name':product['name'],
+            'Price':product['price'],
+            'Rank':product['rank'],
+            'Combination':product['Combination'],
+            'Dry':product['Dry'],
+            'Normal':product['Normal'],
+            'Oily':product['Oily'],
+            'Sensitive':product['Sensitive'],
+            'Ingredients':product['ingredients']
+            }
+            for product in products]
+        return render_template("formoutput.html",output = output)
     return render_template('form.html')
 
 @app.route('/index')

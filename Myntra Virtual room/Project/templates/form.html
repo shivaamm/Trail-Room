@@ -19,34 +19,36 @@
             <form action="{{ url_for("formData")}}" method="post">
                 <div class="form-group">
                     <label for="Label">Label</label>
-                    <!-- <input type="dropdown" class="form-control" id="username" placeholder=""> -->
                     <select name="label" id="products">
                         <option value="-" >Select the facial Product</option>
-                        <option value="Lotion">Lotion</option>
-                        <option value="Suns Cream">Suns Cream</option>
+                        <option value="Moisturizer">Moisturizer</option>
+                        <option value="Cleanser">Cleanser</option>
+                        <option value="Treatment">Treatment</option>
+                        <option value="Face Mask">Face Mask</option>
+                        <option value="Eye cream">Eye cream</option>
+                        <option value="Sun protect">Sun protect</option>
                       </select>
                 </div>
                 <div class="form-group">
-                    <label for="skin">Skin</label>
-                    <!-- <input type="radio" class="form-control" id="html" placeholder="Skin Allergy">
-                    <label for="html">Skin Allergy</label> -->
-                    <input type="radio" id="Oily" name="skin" value="Oily">
-                    <label for="Oily">Oily</label><br>
-                    <input type="radio" id="Dry" name="skin" value="Dry">
+                    <label for="skin">Skin Type</label>
+                    <input type="checkbox" id="Combination" name="skin" value="Combination">
+                    <label for="Combination">Combination</label><br>
+                    <input type="checkbox" id="Dry" name="skin" value="Dry">
                     <label for="Dry">Dry</label><br>
+                    <input type="checkbox" id="Normal" name="skin" value="Normal">
+                    <label for="Normal">Normal</label><br>
+                    <input type="checkbox" id="Oily" name="skin" value="Oily">
+                    <label for="Oily">Oily</label><br>
+                    <input type="checkbox" id="Sensitive" name="skin" value="Sensitive">
+                    <label for="Sensitive">Sensitive</label><br>
                 </div>
                 <div class="form-group">
-                    <!-- <label for="pwd">Price</label> -->
-                    <!-- <input type="password" class="form-control" id="pwd" placeholder=""> -->
-                    
                     <div data-role="rangeslider">
                         <label for="price-min">Price:</label>
-                        <input type="range" name="price-min" id="price-min" value="200" min="0" max="1000">
+                        <input type="range" name="price-min" id="price-min" value=0 min="0" max="1000">
                         <label for="price-max">Price:</label>
-                        <input type="range" name="price-max" id="price-max" value="800" min="0" max="1000">
+                        <input type="range" name="price-max" id="price-max" value=1000 min="0" max="1000">
                       </div>
-                    
-
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-lg float-left">Submit</button>
@@ -55,6 +57,5 @@
         </div>
     </div>
 <!-- partial -->
-  
 </body>
 </html>

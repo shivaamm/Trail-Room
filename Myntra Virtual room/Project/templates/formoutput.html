@@ -9,7 +9,7 @@
 <body>
 	<div class="col-sm-5 col-sm-offset-1">
 		{% if output %}
-		  <h2>Frequencies</h2>
+		  <h2>Your Recommended Products</h2>
 		  <br>
 		  <div id="output">
 			<table class="table table-striped" style="max-width: 300px;">
@@ -34,15 +34,19 @@
 					{% if result.Combination %}
 						Combination
 					{% endif %}
+					<br>
 					{% if result.Dry %}
 						Dry
 					{% endif %}
+					<br>
 					{% if result.Normal %}
 						Normal
 					{% endif %}
+					<br>
 					{% if result.Oily %}
 						Oily
 					{% endif %}
+					<br>
 					{% if result.Sensitive %}
 						Sensitive
 					{% endif %}
