@@ -5,6 +5,7 @@ from numpy import dtype
 from camera import VideoCamera
 from flask_pymongo import PyMongo
 import os
+from applyfliter import *
 app = Flask(__name__)
 
 CART=[]
@@ -91,9 +92,10 @@ def product():
 def contact():
     return render_template('contact.html')
 
-@app.route('/about')
+@app.route('/applyfilter')
 def about():
-    return render_template('about.html')
+    main_fun()
+    return redirect("http://127.0.0.1:5000/product", code=302)
 
 @app.route('/features')
 def features():
