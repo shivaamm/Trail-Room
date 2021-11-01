@@ -1,59 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
-	<div class="col-sm-5 col-sm-offset-1">
-		{% if output %}
-		  <h2>Frequencies</h2>
-		  <br>
-		  <div id="output">
-			<table class="table table-striped" style="max-width: 300px;">
-			  <thead>
-				<tr>
-				  <th>Label</th>
-				  <th>Brand</th>
-				  <th>Name of product</th>
-				  <th>Rank</th>
-				  <th>Skin Type</th>
-				  <th>Price</th>
-				  <th style="width: 500px;">Ingredients</th>
-				</tr>
-			  </thead>
-			  {% for result in output%}
-				<tr>
-				  <td>{{ result.Label }}</td>
-				  <td>{{ result.Brand }}</td>
-				  <td>{{ result.Name }}</td>
-				  <td>{{ result.Rank }}</td>
-				  <td>
-					{% if result.Combination %}
-						Combination
-					{% endif %}
-					{% if result.Dry %}
-						Dry
-					{% endif %}
-					{% if result.Normal %}
-						Normal
-					{% endif %}
-					{% if result.Oily %}
-						Oily
-					{% endif %}
-					{% if result.Sensitive %}
-						Sensitive
-					{% endif %}
-				  </td>
-				  <td>{{ result.Price }}</td>
-				  <td>{{ result.Ingredients }}</td>
-				</tr>
-			  {% endfor %}
-			</table>
-		  </div>
-		{% endif %}
-	  </div>
-</body>
+<html>
+  <head>    
+  </head>
+  <body>
+    <input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+        function goPython(){
+            $.ajax({
+              url: "applyfilter.py",
+            }).done(function() {
+             alert('finished python script');
+            });
+        }
+    </script>
+  </body>
 </html>

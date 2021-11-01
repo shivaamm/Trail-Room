@@ -81,10 +81,7 @@ def WhiteBeauty(image,whi):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-
-
-if __name__ =="__main__":
-    filepath = 'D:\PHOTOS\choki dhani\Mayank Chittora.PNG'
+def def_apply():
     #The original image
     brightness = 1.5
     contrast = 0.2
@@ -98,3 +95,8 @@ if __name__ =="__main__":
     image =cv2.imread('D:\PHOTOS\choki dhani\Mayank Chittora.PNG')
     Filter(image)
     WhiteBeauty(image,whi)
+
+filepath = 'D:\PHOTOS\choki dhani\Mayank Chittora.PNG'
+def main_fun():
+    def_apply()
+
