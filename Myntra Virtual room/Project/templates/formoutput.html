@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Your Products</title>
 </head>
 <body>
 	<div class="col-sm-5 col-sm-offset-1">
@@ -12,7 +12,7 @@
 		  <h2>Your Recommended Products</h2>
 		  <br>
 		  <div id="output">
-			<table class="table table-striped" style="max-width: 300px;">
+			<!-- <table class="table table-striped" style="max-width: 100px;">
 			  <thead>
 				<tr>
 				  <th>Label</th>
@@ -23,13 +23,39 @@
 				  <th>Price</th>
 				  <th style="width: 500px;">Ingredients</th>
 				</tr>
-			  </thead>
+			  </thead> -->
 			  {% for result in output%}
-				<tr>
-				  <td>{{ result.Label }}</td>
-				  <td>{{ result.Brand }}</td>
-				  <td>{{ result.Name }}</td>
-				  <td>{{ result.Rank }}</td>
+				<!-- <tr> -->
+						<style>
+							.card {
+								box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+								transition: 0.3s;
+								border-radius: 5px; /* 5px rounded corners */
+								width: 60%;
+								/* height: 30%; */
+								}
+								
+							/* .card img{
+								width: 30%;
+								height: 30%;
+							} */
+								/* Add rounded corners to the top left and the top right corner of the image */
+								img {
+								border-radius: 5px 5px 0 0;
+								}
+						</style>
+					<div class="card">
+						<img src="static/images/avatar.jpg" alt="Avatar" style="width: 100%;">
+						<div class="Container-fluid">
+						  <h4>{{ result.Name }}</h4>
+						  <h5>{{ result.Price }}</h5>
+						  <h5>{{ result.Brand }}</h5>
+						</div>
+					  </div>
+				  <!-- <td>{{ result.Label }}</td> -->
+				  <!-- <td>{{ result.Brand }}</td>
+				  <td>{{ result.Name }}</td> -->
+				  <!-- <td>{{ result.Rank }}</td>
 				  <td>
 					{% if result.Combination %}
 						Combination
@@ -50,12 +76,12 @@
 					{% if result.Sensitive %}
 						Sensitive
 					{% endif %}
-				  </td>
-				  <td>{{ result.Price }}</td>
-				  <td>{{ result.Ingredients }}</td>
-				</tr>
+				  </td> -->
+				  <!-- <td>{{ result.Price }}</td> -->
+				  <!-- <td>{{ result.Ingredients }}</td> -->
+				<!-- </tr> -->
 			  {% endfor %}
-			</table>
+			<!-- </table> -->
 		  </div>
 		{% endif %}
 	  </div>
