@@ -98,7 +98,7 @@ def insert_one(dbid):
             'Normal':d['Normal'],
             'Oily':d['Oily'],
             'Sensitive':d['Sensitive']}]
-    return render_template("formoutput.html",output = output)
+    return render_template("dist/index.html",result = output)
 
 @app.route('/index')
 def index():

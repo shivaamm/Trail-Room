@@ -7,11 +7,12 @@
 	<title>Your Products</title>
 </head>
 <body>
-	<div class="col-sm-5 col-sm-offset-1">
+	<div class="row">
+		<h2>Your Recommended Products</h2>
 		{% if output %}
-		  <h2>Your Recommended Products</h2>
+		  
 		  <br>
-		  <div id="output">
+		  <!-- <div id="output"> -->
 			<!-- <table class="table table-striped" style="max-width: 100px;">
 			  <thead>
 				<tr>
@@ -31,7 +32,7 @@
 								box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 								transition: 0.3s;
 								border-radius: 5px; /* 5px rounded corners */
-								width: 60%;
+								width: 30%;
 								/* height: 30%; */
 								}
 								
@@ -50,6 +51,8 @@
 						  <h4>{{ result.Name }}</h4>
 						  <h5>{{ result.Price }}</h5>
 						  <h5>{{ result.Brand }}</h5>
+						 <a href="read/{{result._id}}">submit</a>
+
 						</div>
 					  </div>
 				  <!-- <td>{{ result.Label }}</td> -->
@@ -82,7 +85,7 @@
 				<!-- </tr> -->
 			  {% endfor %}
 			<!-- </table> -->
-		  </div>
+		  <!-- </div> -->
 		{% endif %}
 	  </div>
 </body>
