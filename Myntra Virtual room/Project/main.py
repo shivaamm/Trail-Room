@@ -6,6 +6,8 @@ from camera import VideoCamera
 from flask_pymongo import PyMongo
 import os
 from applyfliter import *
+import bson
+from bson.objectid import ObjectId
 app = Flask(__name__)
 
 CART=[]
@@ -79,6 +81,24 @@ def formData():
             for product in products]
         return render_template("formoutput.html",output = output)
     return render_template('form.html')
+
+@app.route("/read/<dbid>")
+def insert_one(dbid):
+    print(dbid)
+    d=db_operations.find_one({'_id':bson.ObjectId(oid=str(dbid))})
+    print(d)
+    output = [
+            {'Label' : d['Label'] ,
+            'Brand' : d['brand'] ,
+            'Name':d['name'],
+            'Price':d['price'],
+            'Rank':d['rank'],
+            'Combination':d['Combination'],
+            'Dry':d['Dry'],
+            'Normal':d['Normal'],
+            'Oily':d['Oily'],
+            'Sensitive':d['Sensitive']}]
+    return render_template("formoutput.html",output = output)
 
 @app.route('/index')
 def index():
