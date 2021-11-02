@@ -1,16 +1,3 @@
-/* === Google Font === */
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
-:root {
-  --font: "Roboto", sans-serif;
-}
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
 /* ==== Base ==== */
 html,
 body {
@@ -112,7 +99,7 @@ button {
 }
 
 /* === Mobile === */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .c-options {
     display: flex;
     flex-wrap: wrap;
@@ -155,7 +142,6 @@ button {
   }
 }
 
-/* === Tablet and Desktop === */
 @media screen and (min-width: 768px) {
   .product {
     display: flex;
@@ -216,4 +202,4 @@ button {
   .button__text {
     font-size: 18px;
   }
-}
+} */

@@ -5,7 +5,7 @@ from numpy import dtype
 from camera import VideoCamera
 from flask_pymongo import PyMongo
 import os
-from applyfliter import *
+from beautify.applyfliter import *
 import bson
 from bson.objectid import ObjectId
 app = Flask(__name__)
@@ -76,17 +76,16 @@ def formData():
             'Normal':product['Normal'],
             'Oily':product['Oily'],
             'Sensitive':product['Sensitive'],
-            'Ingredients':product['ingredients']
+            'Ingredients':product['ingredients'],
+            '_id' : product['_id']
             }
             for product in products]
         return render_template("formoutput.html",output = output)
     return render_template('form.html')
 
-@app.route("/read/<dbid>")
+@app.route("/details/<dbid>")
 def insert_one(dbid):
-    print(dbid)
     d=db_operations.find_one({'_id':bson.ObjectId(oid=str(dbid))})
-    print(d)
     output = [
             {'Label' : d['Label'] ,
             'Brand' : d['brand'] ,
@@ -97,8 +96,10 @@ def insert_one(dbid):
             'Dry':d['Dry'],
             'Normal':d['Normal'],
             'Oily':d['Oily'],
-            'Sensitive':d['Sensitive']}]
-    return render_template("dist/index.html",result = output)
+            '_id':d['_id'],
+            'Sensitive':d['Sensitive'],
+            'Ingredients':d['ingredients']}]
+    return render_template("details.html",output = output)
 
 @app.route('/index')
 def index():

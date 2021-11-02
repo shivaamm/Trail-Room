@@ -67,7 +67,7 @@ a.tm-text-light-dark:hover { color: #747474; }
 .tm-logo {
     width: 370px;
     height: 370px;
-    background: url(static/images/home/logo-bg.png) center no-repeat;
+    background: url('https://www.online-image-editor.com/styles/2019/images/power_girl_editor.png') center no-repeat;
     background-size: cover;
     position: absolute;
     right: -13%;
@@ -170,18 +170,18 @@ p {
 }
 
 .tm-img-container-1 {
-  background-image: url(static/images/home/green-tree-red-cup.jpg);
+  background-image: url('https://www.online-image-editor.com/styles/2019/images/power_girl_editor.png');
   background-position: top center;
 }
 
 .tm-img-container-2 {
-  background-image: url(static/images/home/girl-01.jpg);
+  background-image: url('https://www.online-image-editor.com/styles/2019/images/power_girl_editor.png');
   background-position: top center;
   margin-left: 8px;
 }
 
 .tm-img-container-3 {
-  background-image: url(static/images/home/backpack-guy.jpg);
+  background-image: url('https://www.online-image-editor.com/styles/2019/images/power_girl_editor.png');
   background-position: top right;
 }
 
