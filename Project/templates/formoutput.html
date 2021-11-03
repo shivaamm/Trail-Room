@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Your Products</title>
+</head>
+<body>
+	<div class="row">
+		<h2>Your Recommended Products</h2>
+		<br>
+		{% if output %}
+		  
+		  <br>
+		  <!-- <div id="output"> -->
+			<!-- <table class="table table-striped" style="max-width: 100px;">
+			  <thead>
+				<tr>
+				  <th>Label</th>
+				  <th>Brand</th>
+				  <th>Name of product</th>
+				  <th>Rank</th>
+				  <th>Skin Type</th>
+				  <th>Price</th>
+				  <th style="width: 500px;">Ingredients</th>
+				</tr>
+			  </thead> -->
+			  {% for result in output%}
+				<!-- <tr> -->
+						<style>
+							.card {
+								box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+								transition: 0.3s;
+								border-radius: 5px; /* 5px rounded corners */
+								width: 20%;
+								/* height: 30%; */
+								}
+								
+							.card img{
+								width: 70%;
+								height: 70%;
+							}
+								/* Add rounded corners to the top left and the top right corner of the image */
+								img {
+								border-radius: 5px 5px 0 0;
+								}
+						</style>
+					<div class="card">
+						<img src="{{result.Img}}" alt="Avatar">
+						<div class="Container-fluid">
+						  <h4>{{ result.Name }}</h4>
+						  <h5>{{ result.Price }}</h5>
+						  <h5>{{ result.Brand }}</h5>
+						 <a href="/details/{{result._id}}">submit</a>
+						</div>
+					  </div>
+				  <!-- <td>{{ result.Label }}</td> -->
+				  <!-- <td>{{ result.Brand }}</td>
+				  <td>{{ result.Name }}</td> -->
+				  <!-- <td>{{ result.Rank }}</td>
+				  <td>
+					{% if result.Combination %}
+						Combination
+					{% endif %}
+					<br>
+					{% if result.Dry %}
+						Dry
+					{% endif %}
+					<br>
+					{% if result.Normal %}
+						Normal
+					{% endif %}
+					<br>
+					{% if result.Oily %}
+						Oily
+					{% endif %}
+					<br>
+					{% if result.Sensitive %}
+						Sensitive
+					{% endif %}
+				  </td> -->
+				  <!-- <td>{{ result.Price }}</td> -->
+				  <!-- <td>{{ result.Ingredients }}</td> -->
+				<!-- </tr> -->
+			  {% endfor %}
+			<!-- </table> -->
+		  <!-- </div> -->
+		{% endif %}
+	  </div>
+</body>
+</html>
