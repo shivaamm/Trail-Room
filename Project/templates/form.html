@@ -2,13 +2,79 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Choose your Fit</title>
+  <title>Buy right product</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+  <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="../static/css/form.css">
-  <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
-  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  
+  <style>
+      .slider {
+                    -webkit-appearance: none;
+                    width: 20%;
+                    height: 25px;
+                    position: absolute;
+                    background: #a097f0;
+                    outline: none;
+                }
+
+                .slider input {
+                    pointer-events: none;
+                    position: absolute;
+                    overflow: hidden;
+                    left: 25%;
+                    top: 15px;
+                    width: 30%;
+                    outline: none;
+                    height: 18px;
+                    margin: 0;
+                    padding: 0;
+
+                }
+
+                .slider::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 35px;
+                    height: 35px;
+                    background: #4b39eb;
+                    cursor: pointer;
+
+                    pointer-events: all;
+                    position: relative;
+                    z-index: 1;
+                    outline: 0;
+                }
+
+                .slider::-moz-range-thumb {
+                    width: 20px;
+                    height: 20px;
+                    background: #ea4550;
+                    cursor: pointer;
+
+                    pointer-events: all;
+                    position: relative;
+                    z-index: 10;
+                    -moz-appearance: none;
+                    width: 9px;
+                }
+
+                .slider input::-moz-range-track {
+                    position: relative;
+                    z-index: -1;
+                    border: 0;
+                }
+                .slider input:last-of-type::-moz-range-track {
+                    -moz-appearance: none;
+                    background: none transparent;
+                    border: 0;
+
+                }
+                .slider input[type=range]::-moz-focus-outer {
+                border: 0;
+                }
+  </style>
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -18,17 +84,28 @@
             <h3>Products</h3>
             <form action="{{ url_for("formData")}}" method="post">
                 <div class="form-group">
-                    <label for="Label">Label</label>
+                    <!-- <div class="btn"> -->
+                    <!-- <label for="Label">Label</label>
                     <select name="label" id="products">
                         <option value="-" >Select the facial Product</option>
                         <option value="Face Moisturizer">Face Moisturizer</option>
                         <option value="Face Wash And Cleanser">Face Wash And Cleanser</option>
                         <option value="Sunscreen">Sunscreen</option>
-                      </select>
+                    
+                      </select> -->
+                      <label for="Label" class="my-1 mr-2" for="inlineFormCustomSelectPref">Select the facial Product</label>
+                        <select name="label" id="products" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                            <option selected>Select...</option>
+                            <option value="Face Moisturizer">Face Moisturizer</option>
+                            <option value="Face Wash And Cleanser">Face Wash And Cleanser</option>
+                            <option value="Sunscreen">Sunscreen</option>
+                        </select>
+                    <!-- </div> -->
                 </div>
                 <div class="form-group">
-                    <label for="skin">Skin Type</label>
-                    <input type="checkbox" id="Combination" name="skin" value="Combination">
+                    <div class="form-check">
+                    <label class="" for="skin">Skin Type</label><br>
+                    <input class="" type="checkbox" id="Combination" name="skin" value="Combination">
                     <label for="Combination">Combination</label><br>
                     <input type="checkbox" id="Dry" name="skin" value="Dry">
                     <label for="Dry">Dry</label><br>
@@ -38,14 +115,20 @@
                     <label for="Oily">Oily</label><br>
                     <input type="checkbox" id="Sensitive" name="skin" value="Sensitive">
                     <label for="Sensitive">Sensitive</label><br>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <div data-role="rangeslider">
-                        <label for="price-min">Price:</label>
+                     <div data-role="rangeslider">
+                      <!--  <label for="price-min">Price:</label>
                         <input type="range" name="price-min" id="price-min" value=0 min="0" max="1000">
                         <label for="price-max">Price:</label>
                         <input type="range" name="price-max" id="price-max" value=1000 min="0" max="1000">
-                      </div>
+                      -->
+                      <label for="price-min">Price:</label>
+                      <input type="range" name="price-min" id="price-min" min="0" max="1000" value=0 class="slider">
+                      <label for="price-max">Price:</label>
+                      <input type="range" name="price-max" id="price-max" min="0" max="1000" value=1000 class="slider">
+                        </div> 
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-lg float-left">Submit</button>
