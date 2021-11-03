@@ -12,16 +12,17 @@
 </head>
 <body>
     <div class = "card-wrapper">
+      {% for result in output%}
         <div class = "card">
           <!-- card left -->
           <div class = "product-imgs">
             <div class = "img-display">
               <div class = "img-showcase">
-                <img src = "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/1661463/2021/8/11/6a01d4c3-ee29-4fc5-9086-00c6d642d6ee1628671588398BiotiqueAdvancedBXLCellularWhiteningCream50g4.jpg" alt = "shoe image">
+                <img src = "{{result.Img}}" alt = "shoe image">
               </div>
             </div>
           </div>
-          {% for result in output%}
+          
           <!-- card right -->
           <div class = "product-content">
             <h2 class = "product-title">{{ result.Name }}</h2>
@@ -36,7 +37,8 @@
             </div>
 
             <div class = "product-price">
-              <p class = "new-price">Price: <span>${{ result.Price }}</span></p>
+              <p class = "last-price">Old Price: <span>₹{{result.MRP}}</span></p>
+              <p class = "new-price">New Price: <span>₹{{result.Price}}</span></p>
             </div>
 
             <div class = "product-detail">
@@ -57,11 +59,9 @@
                 {% endif %}
                 {% if result.Sensitive %}
                 <li>Sensitive</li>
-                {% endif %}
-                
+                {% endif %}   
               </ul>
             </div>
-      
           </div>
           {% endfor %}
         </div>

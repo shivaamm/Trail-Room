@@ -89,6 +89,7 @@ def insert_one(dbid):
             'Brand' : product['brand'] ,
             'Name':product['name'],
             'Price':product['price'],
+            'MRP':product['mrp'],
             'Rating':product['rating'],
             'Combination':product['Combination'],
             'Dry':product['Dry'],
