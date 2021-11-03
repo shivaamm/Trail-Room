@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Choose your Fit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+  <link rel="stylesheet" href="../static/css/form.css">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container" id="registration-form">
+        <div class="image"></div>
+        <div class="frm">
+            <h3>Products</h3>
+            <form action="{{ url_for("formData")}}" method="post">
+                <div class="form-group">
+                    <label for="Label">Label</label>
+                    <select name="label" id="products">
+                        <option value="-" >Select the facial Product</option>
+                        <option value="Face Moisturizer">Face Moisturizer</option>
+                        <option value="Face Wash And Cleanser">Face Wash And Cleanser</option>
+                        <option value="Sunscreen">Sunscreen</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <label for="skin">Skin Type</label>
+                    <input type="checkbox" id="Combination" name="skin" value="Combination">
+                    <label for="Combination">Combination</label><br>
+                    <input type="checkbox" id="Dry" name="skin" value="Dry">
+                    <label for="Dry">Dry</label><br>
+                    <input type="checkbox" id="Normal" name="skin" value="Normal">
+                    <label for="Normal">Normal</label><br>
+                    <input type="checkbox" id="Oily" name="skin" value="Oily">
+                    <label for="Oily">Oily</label><br>
+                    <input type="checkbox" id="Sensitive" name="skin" value="Sensitive">
+                    <label for="Sensitive">Sensitive</label><br>
+                </div>
+                <div class="form-group">
+                    <div data-role="rangeslider">
+                        <label for="price-min">Price:</label>
+                        <input type="range" name="price-min" id="price-min" value=0 min="0" max="1000">
+                        <label for="price-max">Price:</label>
+                        <input type="range" name="price-max" id="price-max" value=1000 min="0" max="1000">
+                      </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-lg float-left">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<!-- partial -->
+</body>
+</html>
