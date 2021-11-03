@@ -1,6 +1,6 @@
-# Bytecoders
+ # Bytecoders
 Repository for Myntra HackerRamp: Campus Edition 2021
-
+<!--
 ## Phase 1 PPT
 https://docs.google.com/presentation/d/17DITVg5c5THc35s57EnLpCQPImE4iTpbUdG6fnfA45k/edit#slide=id.gf70e5ac737_0_77
 
@@ -92,3 +92,4 @@ pip install tk
 <h4>Now RUN `python main.py` </h4>
 After successfully completing run process you will get one URL(local host url)...
 Click on that URL and you will redirect to Default Browser on your system...
+ -->
