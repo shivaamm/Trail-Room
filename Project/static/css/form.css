@@ -15,7 +15,7 @@ body{
 
 #registration-form .image{
 	float:left;
-	background-image: url("https://dl.dropboxusercontent.com/s/5lg1zkgu8esm5jw/desk.jpg?dl=0");
+	background-image: url("../images/beauty.jpg");
 	height: 500px;
 	width: 50%;
 	background-size: cover;
