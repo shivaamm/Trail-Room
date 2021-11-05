@@ -33,6 +33,111 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="static/css/main.css">
 	<link rel="stylesheet" type="text/css" href="static/css/util.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+	<style>
+		.button-addtocart{
+		padding: 4px 8px;
+		font-size: 20px;
+		font-weight: 500;
+		border-radius: 4px;
+		border: none;
+		outline: none;
+		background: rgb(48, 199, 48);
+		color: white;
+		letter-spacing: 1px;
+		cursor: pointer;
+		}
+		.alert{
+		background: #25d80d;
+		padding: 20px 40px;
+		min-width: 420px;
+		position: absolute;
+		right: 0;
+		top: -100px;
+		border-radius: 4px;
+		border-left: 8px solid #25d80d;
+		overflow: hidden;
+		opacity: 0;
+		pointer-events: none;
+		}
+		.alert.showAlert{
+		opacity: 1;
+		pointer-events: auto;
+		}
+		.alert.show{
+		animation: show_slide 1s ease forwards;
+		}
+		@keyframes show_slide {
+		0%{
+			transform: translateX(100%);
+		}
+		40%{
+			transform: translateX(-10%);
+		}
+		80%{
+			transform: translateX(0%);
+		}
+		100%{
+			transform: translateX(-10px);
+		}
+		}
+		.alert.hide{
+		animation: hide_slide 1s ease forwards;
+		}
+		@keyframes hide_slide {
+		0%{
+			transform: translateX(-50px);
+		}
+		40%{
+			transform: translateX(0%);
+		}
+		80%{
+			transform: translateX(-50%);
+		}
+		100%{
+			transform: translateX(150%);
+		}
+		}
+		.alert .fa-exclamation-circle{
+		position: absolute;
+		left: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #ff002b;
+		font-size: 30px;
+		}
+		.alert .msg{
+		padding: 0 20px;
+		font-size: 18px;
+		color: #0f0c05;
+		}
+		.alert .close-btn{
+		position: absolute;
+		right: 0px;
+		top: 50%;
+		transform: translateY(-50%);
+		background: #25d80d;
+		padding: 20px 18px;
+		cursor: pointer;
+		}
+		.alert .close-btn:hover{
+		background: #f10d0d;
+		}
+		.alert .close-btn .fas{
+		color: #ce1800;
+		font-size: 22px;
+		line-height: 40px;
+		}
+		#check_out{
+			color: gray;
+			padding: 20%;cursor: pointer;
+			background-color: white;
+			font-size: 17px;
+		}
+		#check_out:hover{
+			color: black;
+		}
+	</style>
 <!--===============================================================================================-->
 </head>
 <body class="animsition" >
@@ -53,7 +158,7 @@
 			<!-- Icon header -->
 			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
 				<form>
-					<p><input type="button" id= "check_out"  class="button" value="Try & checkout"></p>			
+					<p><input type="button" id= "check_out" class="button" value="Try & Checkout"></p>			
 				</form>
 
 			</div>
@@ -146,7 +251,7 @@
 					</div>
 				</div>
 
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item men">
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item men" style="margin-top: -40px;">
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
@@ -297,9 +402,9 @@
 
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal1">
+				<a class="how-pos3 hov3 trans-04 js-hide-modal1">
 					<img src="static/images/icons/icon-close.png" alt="CLOSE">
-				</button>
+				</a>
 
 				<div class="row">
 					<div class="col-md-6 col-lg-7 p-b-30">
@@ -351,10 +456,15 @@
 
 							<span class="mtext-106 cl2">
 								Rs 235.64
-							
-
-								<form ><p><input type=button onclick="addToCart('static/images/Tops4/4.png')" value="Add to cart" /></p></form>
-										
+								<br>
+								<p><button class="button-addtocart" onclick="addToCart('static/images/Tops4/4.png')">Add to trial</button></p>
+								<div class="alert hide">
+								<span class="fas fa-exclamation-circle"></span>
+								<span class="msg">Added to trial!</span>
+								<div class="close-btn">
+									<span class="fas fa-times"></span>
+								</div>
+								</div>	
 								</span>
 							<!--  -->
 							<div class="flex-w flex-m p-l-100 p-t-40 respon7">
@@ -384,9 +494,9 @@
 
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal2">
+				<a class="how-pos3 hov3 trans-04 js-hide-modal2">
 					<img src="static/images/icons/icon-close.png" alt="CLOSE">
-				</button>
+				</a>
 
 				<div class="row">
 					<div class="col-md-6 col-lg-7 p-b-30">
@@ -438,9 +548,15 @@
 
 							<span class="mtext-106 cl2">
 								Rs. 125.31
-							
-							
-								<form ><p><input type=button onclick="addToCart('static/images/Tops4/7.png')" value="Add to cart" /></p></form>
+								<br>
+								<p><button class="button-addtocart" onclick="addToCart('static/images/Tops4/7.png')">Add to trial</button></p>
+								<div class="alert hide">
+								<span class="fas fa-exclamation-circle"></span>
+								<span class="msg">Added to trial!</span>
+								<div class="close-btn">
+									<span class="fas fa-times"></span>
+								</div>
+								</div>
 								</span>
 								
 							<!--  -->
@@ -470,9 +586,9 @@
 
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal3">
+				<a class="how-pos3 hov3 trans-04 js-hide-modal3">
 					<img src="static/images/icons/icon-close.png" alt="CLOSE">
-				</button>
+				</a>
 
 				<div class="row">
 					<div class="col-md-6 col-lg-7 p-b-30">
@@ -524,8 +640,15 @@
 
 							<span class="mtext-106 cl2">
 								Rs. 125.50
-
-								<form ><p><input type=button onclick="addToCart('static/images/Tops4/6.png')" value="Add to cart" /></p></form>
+								<br>
+								<p><button class="button-addtocart" onclick="addToCart('static/images/Tops4/6.png')">Add to trial</button></p>
+								<div class="alert hide">
+								<span class="fas fa-exclamation-circle"></span>
+								<span class="msg">Added to trial!</span>
+								<div class="close-btn">
+									<span class="fas fa-times"></span>
+								</div>
+								</div>
 								</span>
 
 							<!--  -->
@@ -555,9 +678,9 @@
 
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal5">
+				<a class="how-pos3 hov3 trans-04 js-hide-modal5">
 					<img src="static/images/icons/icon-close.png" alt="CLOSE">
-				</button>
+				</a>
 
 				<div class="row">
 					<div class="col-md-6 col-lg-7 p-b-30">
@@ -609,8 +732,15 @@
 
 							<span class="mtext-106 cl2">
 								Rs. 134.75
-
-								<form ><p><input type=button onclick="addToCart('static/images/Tops4/5.png')" value="Add to cart" /></p></form>
+								<br>
+								<p><button class="button-addtocart" onclick="addToCart('static/images/Tops4/5.png')">Add to trial</button></p>
+								<div class="alert hide">
+								<span class="fas fa-exclamation-circle"></span>
+								<span class="msg">Added to trial!</span>
+								<div class="close-btn">
+									<span class="fas fa-times"></span>
+								</div>
+								</div>
 								</span>
 
 														<!--  -->
@@ -640,9 +770,9 @@
 
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal6">
+				<a class="how-pos3 hov3 trans-04 js-hide-modal6">
 					<img src="static/images/icons/icon-close.png" alt="CLOSE">
-				</button>
+				</a>
 
 				<div class="row">
 					<div class="col-md-6 col-lg-7 p-b-30">
@@ -694,8 +824,15 @@
 
 							<span class="mtext-106 cl2">
 								Rs. 2193.20
-
-								<form ><p><input type=button onclick="addToCart('static/images/Frocks5/2.png')" value="Add to cart" /></p></form>
+								<br>
+								<p><button class="button-addtocart" onclick="addToCart('static/images/Frocks5/2.png')">Add to trial</button></p>
+								<div class="alert hide">
+								<span class="fas fa-exclamation-circle"></span>
+								<span class="msg">Added to trial!</span>
+								<div class="close-btn">
+									<span class="fas fa-times"></span>
+								</div>
+								</div>
 								</span>
 
 							<!--  -->
@@ -725,9 +862,9 @@
 
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal8">
+				<a class="how-pos3 hov3 trans-04 js-hide-modal8">
 					<img src="static/images/icons/icon-close.png" alt="CLOSE">
-				</button>
+				</a>
 
 				<div class="row">
 					<div class="col-md-6 col-lg-7 p-b-30">
@@ -779,8 +916,15 @@
 
 							<span class="mtext-106 cl2">
 								Rs. 418.96
-
-								<form ><p><input type=button onclick="addToCart('static/images/Tops4/15.png')" value="Add to cart" /></p></form>
+								<br>
+								<p><button class="button-addtocart" onclick="addToCart('static/images/Tops4/15.png')">Add to trial</button></p>
+								<div class="alert hide">
+								<span class="fas fa-exclamation-circle"></span>
+								<span class="msg">Added to trial!</span>
+								<div class="close-btn">
+									<span class="fas fa-times"></span>
+								</div>
+								</div>
 								</span>
 
 							<!--  -->
@@ -810,9 +954,9 @@
 
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal11">
+				<a class="how-pos3 hov3 trans-04 js-hide-modal11">
 					<img src="static/images/icons/icon-close.png" alt="CLOSE">
-				</button>
+				</a>
 
 				<div class="row">
 					<div class="col-md-6 col-lg-7 p-b-30">
@@ -864,8 +1008,15 @@
 
 							<span class="mtext-106 cl2">
 								Rs. 4563.16
-
-								<form ><p><input type=button onclick="addToCart('static/images/Frocks5/3.png')" value="Add to cart" /></p></form>
+								<br>
+								<p><button class="button-addtocart" onclick="addToCart('static/images/Frocks5/3.png')">Add to trial</button></p>
+								<div class="alert hide">
+								<span class="fas fa-exclamation-circle"></span>
+								<span class="msg">Added to trial!</span>
+								<div class="close-btn">
+									<span class="fas fa-times"></span>
+								</div>
+								</div>
 								</span>
 							
 							<!--  -->
@@ -895,9 +1046,9 @@
 
 		<div class="container">
 			<div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-				<button class="how-pos3 hov3 trans-04 js-hide-modal112">
+				<a class="how-pos3 hov3 trans-04 js-hide-modal112">
 					<img src="static/images/icons/icon-close.png" alt="CLOSE">
-				</button>
+				</a>
 
 				<div class="row">
 					<div class="col-md-6 col-lg-7 p-b-30">
@@ -949,8 +1100,15 @@
 
 							<span class="mtext-106 cl2">
 								Rs. 263.15
-
-								<form ><p><input type=button onclick="addToCart('static/images/Tops4/16.png')" value="Add to cart" /></p></form>
+								<br>
+								<p><button class="button-addtocart" onclick="addToCart('static/images/Tops4/16.png')">Add to trial</button></p>
+								<div class="alert hide">
+								<span class="fas fa-exclamation-circle"></span>
+								<span class="msg">Added to trial!</span>
+								<div class="close-btn">
+									<span class="fas fa-times"></span>
+								</div>
+								</div>
 								</span>
 
 							<!--  -->
@@ -983,7 +1141,7 @@
 	<!-- cart -->
 	<script src="static/js/simpleCart.min.js"></script>
 	<!-- cart -->
-	
+	<!-- <script src='https://code.jquery.com/jquery-3.4.1.js'></script> -->
 
 <!--===============================================================================================-->	
 	<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -1090,16 +1248,26 @@
 	<script type="text/javascript">
 
 		var CART = []
-
-		
 		function addToCart(product) {
 
 			if(CART.indexOf(product) == -1){
 				CART.push(product)
 			}
-			   alert("Added Product To Cart")
+			// alert("Added Product To Cart")
 		}
-		
+		$('button').click(function(){
+		$('.alert').addClass("show");
+		$('.alert').removeClass("hide");
+		$('.alert').addClass("showAlert");
+		setTimeout(function(){
+			$('.alert').removeClass("show");
+			$('.alert').addClass("hide");
+		},3000);
+		});
+		$('.close-btn').click(function(){
+		$('.alert').removeClass("show");
+		$('.alert').addClass("hide");
+		});
 		function checkOut(){
 			
 			return CART.join(' ')

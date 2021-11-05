@@ -24,9 +24,9 @@
 </head>
 <body>
 	<div class="container">
+		{% if output %}
+		<h2 style="text-align: center;">Recommended Products</h2> <br>
 		<div class="row mb-4">
-			{% if output %}
-			
 			  {% for result in output%}
 		  <div class="col-12 col-sm-8 col-md-6 col-lg-4">
 			<div class="card shadow p-3 mb-5 bg-white rounded">
@@ -50,14 +50,12 @@
 			  </div>
 			</div>
 		  </div>
-		   
 		  {% endfor %}
-			
-		{% endif %}
-		  </div>
-	  
-		
-		  
+		  {% else %}
+		  	<h2 style="text-align: center;">No such product </h2> <br>
+		  {% endif %}
+		</div>
+		<h3 style="text-align: center;"><a href="/form">Choose different</a></h3>
 	  </div>  
 </body>
 </html>

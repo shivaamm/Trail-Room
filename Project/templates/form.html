@@ -11,8 +11,8 @@
   <style>
         .slider{
             -webkit-appearance: none;
-            width: 20%;
-            height: 25px;
+            width: 12%;
+            height: 18px;
             position: absolute;
             background: #a097f0;
             outline: none;
@@ -35,8 +35,8 @@
         .slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 35px;
-            height: 35px;
+            width: 20px;
+            height: 20px;
             background: #4b39eb;
             cursor: pointer;
 
@@ -73,6 +73,12 @@
         .slider input[type=range]::-moz-focus-outer {
         border: 0;
         }
+        .label-name{
+            color: gray;
+        }
+        .form-head{
+            font-size: 16px;
+        }
   </style>
 </head>
 <body>
@@ -92,28 +98,28 @@
                         <option value="Sunscreen">Sunscreen</option>
                     
                       </select> -->
-                      <label for="Label" class="my-1 mr-2" for="inlineFormCustomSelectPref">Select the facial Product</label>
+                      <label for="Label" class="my-1 mr-2 form-head" for="inlineFormCustomSelectPref">Select the facial Product</label>
                         <select name="label" id="products" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                             <option selected>Select...</option>
-                            <option value="Face Moisturizer">Face Moisturizer</option>
-                            <option value="Face Wash And Cleanser">Face Wash And Cleanser</option>
-                            <option value="Sunscreen">Sunscreen</option>
+                            <option class="label-name" value="Face Moisturizer">Face Moisturizer</option>
+                            <option class="label-name" value="Face Wash And Cleanser">Face Wash And Cleanser</option>
+                            <option class="label-name" value="Sunscreen">Sunscreen</option>
                         </select>
                     <!-- </div> -->
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin-left: -18px;">
                     <div class="form-check">
-                    <label class="" for="skin">Skin Type</label><br>
+                    <label class="form-head" for="skin">Skin Type</label><br>
                     <input class="" type="checkbox" id="Combination" name="skin" value="Combination">
-                    <label for="Combination">Combination</label><br>
+                    <label class="label-name" for="Combination">Combination</label><br>
                     <input type="checkbox" id="Dry" name="skin" value="Dry">
-                    <label for="Dry">Dry</label><br>
+                    <label class="label-name" for="Dry">Dry</label><br>
                     <input type="checkbox" id="Normal" name="skin" value="Normal">
-                    <label for="Normal">Normal</label><br>
+                    <label class="label-name" for="Normal">Normal</label><br>
                     <input type="checkbox" id="Oily" name="skin" value="Oily">
-                    <label for="Oily">Oily</label><br>
+                    <label class="label-name" for="Oily">Oily</label><br>
                     <input type="checkbox" id="Sensitive" name="skin" value="Sensitive">
-                    <label for="Sensitive">Sensitive</label><br>
+                    <label class="label-name" for="Sensitive">Sensitive</label><br>
                     </div>
                 </div>
                 <div class="form-group">
@@ -123,19 +129,29 @@
                         <label for="price-max">Price:</label>
                         <input type="range" name="price-max" id="price-max" value=1000 min="0" max="1000">
                       -->
-                      <label for="price-min">Price:</label>
-                      <input type="range" name="price-min" id="price-min" min="0" max="1000" value=0 class="slider">
-                      <label for="price-max">Price:</label>
-                      <input type="range" name="price-max" id="price-max" min="0" max="1000" value=1000 class="slider">
-                        </div> 
+                      <label for="price-min" class="form-head">Price:</label> <br>
+                      <input type="range" name="price-min" id="price-min" min="0" max="1000" value=0 class="slider" onchange="updatePriceMin(this.value);">
+                      <label for="price-max"></label>
+                      <input type="range" name="price-max" id="price-max" min="0" max="1000" value=1000 class="slider" onchange="updatePriceMax(this.value);">
+                      <br>
+                      <span class="label-name">Min : </span><span id="minPrice" class="label-name" style="padding-right: 55px;">0</span>
+                      <span class="label-name">Max : </span><apan id="maxPrice" class="label-name">1000</span>
+                    </div> 
                 </div>
-                <br>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-lg float-left">Submit</button>
                 </div>
             </form>
         </div>
     </div>
+    <script>
+        function updatePriceMin(val) {
+        document.getElementById("minPrice").innerHTML = val;
+        }
+        function updatePriceMax(val) {
+        document.getElementById("maxPrice").innerHTML = val;
+        }
+    </script>
 <!-- partial -->
 </body>
 </html>
