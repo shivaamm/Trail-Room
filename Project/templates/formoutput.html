@@ -1,65 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<title>Your Products</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../static/js/formoutput.js"></script>
+    <title>Buy Right Product</title>
 	<style>
-		h2{
-			position: auto;
-		}
-		#card {
-			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-			transition: 0.3s;
-			border-radius: 5px; 
-			width: 25%;
-			height: 100%;
-			}
-			
-		#card img{
-			width: 65%;
-			height: 65%;
-		}
-			img {
-				
-			border-radius: 5px 5px 0 0;
-			}
-			.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
+		body {
+    padding: 2rem 0rem;
+  }
+  
+  .like {
+    font-size: 1.5rem;
+  }
 	</style>
 </head>
 <body>
-	<br>
-	<h2 style="text-align: center;">Your Recommended Products</h2><br><br>
 	<div class="container">
-		<div class="row">
-			
-			<br>
+		<div class="row mb-4">
 			{% if output %}
 			
 			  {% for result in output%}
-						
-					<div class="col" id="card">
-						<img src="{{result.Img}}" alt="Avatar" class="center">
-						<div class="Container-fluid">
-						  <h4>{{ result.Name }}</h4>
-						  <h5>{{ result.Price }}</h5>
-						  <h5>{{ result.Brand }}</h5>
-						  <button class="btn btn" style="color: azure;background-color: rgb(79, 223, 79);"> <a href="/details/{{result._id}}">Submit</a></button>
-						</div>
-						<br>
-					</div>
-			  {% endfor %}
-			<!-- </table> -->
-		  <!-- </div> -->
+		  <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+			<div class="card shadow p-3 mb-5 bg-white rounded">
+			  <img class="card-img" src="{{result.Img}}" alt="Vans">
+			  <div class="card-img d-flex justify-content-end">
+				<a href="#" class="card-link text-danger like">
+				  
+				</a>
+			  </div>
+			  <div class="card-body">
+				<h4 class="card-title">{{ result.Brand }}</h4>
+				
+				<p class="card-text">
+					{{ result.Name }}             </p>
+	  
+				<div class="buy d-flex justify-content-between align-items-center">
+				  <div class="price text-success"><h5 class="mt-4">₹{{ result.Price }}</h5></div>
+				 
+				   <a href="/details/{{result._id}}" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Submit</a>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		   
+		  {% endfor %}
+			
 		{% endif %}
-	  </div>
-	</div>
+		  </div>
+	  
+		
+		  
+	  </div>  
 </body>
 </html>
