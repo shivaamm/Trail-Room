@@ -1,198 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Beauty HTML5 Template</title>
-  <script>
-    // detect IE8 and above, and edge
-    if (document.documentMode || /Edge/.test(navigator.userAgent)) {
-        alert('Please use Chrome or Firefox for best browsing experience!');
-    }
-  </script>
-
-  <!-- load CSS -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">                 
-  <link rel="stylesheet" href="static/css/homeCSS/bootstrap.min.css">                                     
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="static/css/homeCSS/slick.css">
-  <link rel="stylesheet" href="static/css/homeCSS/slick-theme.css">
-  <link rel="stylesheet" href="static/css/homeCSS/templatemo-style.css">                                    <!-- Templatemo style -->
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/home.css">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> 
+    <script src="index.js"></script>
+    <title>Document</title>
 </head>
-
 <body>
 
-  <!-- Loader -->
-  <div id="loader-wrapper">
-    <div id="loader"></div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-  </div>
 
-  <div class="container">
-    <div class="tm-top-bar"></div>
-
-    <!-- Welcome section -->
-    <section class="tm-welcome">
-
-      <div class="tm-welcome-left">
-        <!-- Logo -->
-        <div class="tm-logo">
-          <h1 class="tm-site-name">Beauty</h1>
-        </div>
-        <div class="tm-welcome-content">
-          <!-- fa icons -->
-          <!-- <div class="tm-welcome-icons-container">
-            <i class="fa fa-heart" aria-hidden="true" style="font-size: 50px;padding-right: 20px;"></i>
-            <i class="fa fa-shopping-bag" aria-hidden="true" style="font-size: 50px;"></i>
-          </div> -->
-
-          <!-- <h2 class="tm-mb-25">Simple HTML Page</h2> -->
-          <p class="tm-font-big">Beauty means improvising the appearance of something. It affects how people look, feel and express themselves. Along with makeup and skincare products that go right on someone’s skin, clothes also plays a vital role in beautifying a person.</p>
-        </div>
-      </div>
-      <div class="tm-welcome-right"></div>
-
-    </section>
-    <div class="tm-bar-2"></div>
-
-    <section class="row tm-section-mb tm-section-2">
-      <div class="col-md-12 tm-section-2-inner">
-        <div class="tm-section-2-left">
-              <div class="tm-img-container tm-img-container-1"></div>
-              <div class="tm-img-container tm-img-container-2"></div>
-        </div>
-        <div class="tm-section-2-right tm-bg-primary">
-          <div class="tm-section-2-text">
-            <h2 class="tm-section-2-header tm-mb-45">Trial room experience</h2>
-            <p class="tm-p-ml">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> Extending to enhancing user experience by bringing the real time trial room in a virtual setup. <br><br>
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> Using virtual AR we can give a more prominent view on  how those clothes would look on them and how well they will fit. <br><br>         
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i> Integer pretium dapibus tellus vitae pretium. Nulla molestie lectus in viverra dignissim.
-              <br><h3><a href="/product" style="color: yellow;">Try clothes</a></h3>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="row tm-section-3">
-      <div class="col-md-12 tm-section-3-inner">
-        <div class="tm-section-3-left tm-bg-primary">
-          <div class="tm-section-3-text">
-            <i class="fa fa-shopping-bag" aria-hidden="true" style="font-size: larger;"></i>
-            <h2 class="tm-section-2-header tm-mb-45">Choose what's right</h2>
-            <h4>Click -><a href="/form">Open form</a></h4>
-            <!-- <a href="#" class="d-block tm-welcome-link">Continue...</a> -->
-          </div>
-        </div>
-        <div class="tm-section-3-right">
-          <div class="tm-img-container tm-img-container-3"></div>
-        </div>
-      </div>
-  </section>
-
-  <section class="row tm-section-pt tm-section-pb">
-    <div class="col-md-6 mx-auto text-center">
-      <h2 class="tm-text-dark tm-mb-50">THE COMMUNITY</h2>
-      <p class="tm-text-light-dark tm-font-big">Quisque venenatis lectus vitae massa rhoncus, ut ultricies tortor rhoncus. Donec lacinia elit dio, eget elementum sapien tempor at. Suspendisse potenti. Phasellus feugiat massa eget nunc auctor semper.</p>
-    </div>
-  </section>
-
-  <section class="row tm-section-pb">
-    <div class="col-md-12 tm-bg-accent tm-gallery-pad tm-gallery-container mx-auto">
-      <h2 class="text-center tm-mb-45">Image Gallery</h2>
-      <div class="grid tm-gallery">
-        <figure class="effect-lexi tm-gallery-item">
-          <img src="../static/images/home/img-01.jpg" alt="Image" class="">
-          <figcaption>
-            <p>Orci varius natoque penatibus et magnis dis parturient montes.</p>
-          </figcaption>
-        </figure>
-        <figure class="effect-lexi tm-gallery-item">
-          <img src="static/images/home/img-02.jpg" alt="Image" class="">
-          <figcaption>
-            <p>Vivamus interdum a lectus non auctor. Aliquam placerat.</p>
-          </figcaption>
-        </figure>
-        <figure class="effect-lexi tm-gallery-item">
-          <img src="static/images/home/img-03.jpg" alt="Image" class="">
-          <figcaption>
-            <p>Maecenas quis risus sem. Fusce ac dolor in ipsum pretium.</p>
-          </figcaption>
-        </figure>
-        <figure class="effect-lexi tm-gallery-item">
-          <img src="static/images/home/img-04.jpg" alt="Image" class="">
-          <figcaption>
-            <p>In scelerisque tincidunt elit nec luctus. Curabitur.</p>
-          </figcaption>
-        </figure>
-        <figure class="effect-lexi tm-gallery-item">
-          <img src="static/images/home/img-05.jpg" alt="Image" class="">
-          <figcaption>
-            <p>Nulla molestie lectus in viverra dignissim. Donec aliquam.</p>
-          </figcaption>
-        </figure>
-        <figure class="effect-lexi tm-gallery-item">
-          <img src="static/images/home/img-06.jpg" alt="Image" class="">
-          <figcaption>
-            <p>Nullam sagittis leo vitae mi ultricies, sed vestibulum libero.</p>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <footer class="pt-4 pb-4">
-    <p class="text-center tm-text-light-dark">Myntra HackerRamp: Campus Edition 2021
+  <header id="header">
+    <!--  Brand Logo  -->
+    <a style="display: none;" class="nav-brand" href="" target="_blank">
+      <img id="header-img" src="https://i.postimg.cc/8czjYqkS/Minimal-Premade-Logos-V02-04.png" alt="Pixel Skincare">
+    </a>
     
-    | Team: <a rel="nofollow" href="http://templatemo.com" class="tm-text-light-dark">Bytecoders</a></p>
-  </footer>
+    <!--  Toggle Menu for Mobile  -->
+    
+    <input type="checkbox" id="toggle-menu" role="button">
+    <label for="toggle-menu" class="toggle-menu">Menu</label>
+    
+    <!--  Menus  -->
+    <nav id="nav-bar" class="navbar">
+      <ul class="menu">
+        <li><a class="nav-link" href="#featured">New in!</a></li>
+        <li><a class="nav-link" href="#collections">Collections</a></li>
+        <li><a class="nav-link" href="#contact">Explore</a></li>
+      </ul>
+      <ul class="social-menu">
+        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+      </ul>
+    </nav>
+  </header>
 
-</div> <!-- container -->
+<!-- Hero Section -->
+<div class="hero">
+  <div class="hero-img">
+    <img src="https://i.postimg.cc/kMNz5grj/flower.png" alt="Pixel Skincare">
+  </div>
+  <div class="hero-text">
+    <h4>Beauty means improvising the appearance of something.<br> It affects how people look, feel and express themselves.<br> Along with makeup and skincare products that go right on someone’s skin,<br> clothes also plays a vital role in beautifying a person.</h4>
+  </div>
+</div>
 
-<script src="../static/js/jquery-3.2.1.slim.min.js"></script>
-<script src="../static/css/homeCSS/slick.js"></script>
-<script>
+<!-- Featured Section -->
+<section id="featured">
+  <div class="title title-left">
+    <span class="line"></span><h3>Trial room experience!</h3>
+  </div>
+  <div class="wrapper">
+    <div class="image">
+      <img src="https://i.postimg.cc/DyM1SgNb/flower-copy.png" alt="Pixel Facial Cream">
+    </div>
+    <div class="text">
+        <p class="tm-p-ml">
+        <i class="fa fa-shopping-bag" aria-hidden="true"></i> Extending to enhancing user experience by bringing the real time trial room in a virtual setup. <br><br>
+        <i class="fa fa-shopping-bag" aria-hidden="true"></i> Using virtual AR we can give a more prominent view on  how those clothes would look on them and how well they will fit. <br><br>         
+        <i class="fa fa-shopping-bag" aria-hidden="true"></i> Integer pretium dapibus tellus vitae pretium. Nulla molestie lectus in viverra dignissim.
+        <br>
+      </p>
+      <a href="/product" class=btn>Try clothes</a>
+    </div>
+  </div>
+</section>
 
-  $(function(){
-    $('.tm-gallery').slick({
-      dots: true,
-      infinite: true,
-      slidesToShow: 4,
-      slidesToScroll: 2,
-      responsive: [
-      {
-        breakpoint: 991,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
-    ]
-    });
-  });
+<!-- Collection Section -->
+<section id="collections">
+  <div class="title title-right">
+    <span class="line line-right"></span><h3>Collections</h3>
+  </div>
+  <div class="wrapper">
+    <a class="box box1" href="#">
+      <h4>Face Moisturizer</h4>
+      <div class="box-overlay"></div>
+    </a>
+    <a class="box box2" href="#">
+      <h4>Sunscreen </h4>
+      <div class="box-overlay"></div>
+    </a>
+    <a class="box box3" href="#">
+      <h4>Face Wash And Cleanser</h4>
+      <div class="box-overlay"></div>
+    </a>
+  </div>
+</section>
 
-</script>
+<div class="hero">
+  <div class="hero-img">
+    <img src="https://i.postimg.cc/kMNz5grj/flower.png" alt="Pixel Skincare">
+  </div>
+  <div class="hero-text">
+    <h1>Your Skin</br> Would Loved It!</h1>
+    <a href="/form" class="btn">Explore</a>
+  </div>
+</div>
+
+
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="wrapper">
+
+
+    <div class="copy-wrapper">
+      <h6><i class="fa fa-copyright" aria-hidden="true"></i> Myntra HackerRamp: Campus Edition 2021 | Team: Bytecoders</h6>
+    </div>
+  </div>
+</section>
 </body>
 </html>
