@@ -6,7 +6,7 @@ https://docs.google.com/presentation/d/17DITVg5c5THc35s57EnLpCQPImE4iTpbUdG6fnfA
 
 ## Phase 2 
 
-# Virtual-Dressing-Room with Recommendation system
+## Virtual-Dressing-Room and Beauty Products Recommendation system
 Virtual Dressing Room is an augmented reality dressing room where user or customer will allow to try apparel on their body it self.
 
 Virtual Dressing Room is an augmented reality dressing room where the image of the user is captured by the webcam or any other camera and given as an input. By using the face and body detection techniques, the video is scanned for the presence of human faces and then product images are masked. Now the masked image is superimposed and the user can see the images of the dresses and face accessories on them self.
